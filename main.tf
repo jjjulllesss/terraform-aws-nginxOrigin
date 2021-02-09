@@ -81,6 +81,11 @@ resource "aws_instance" "instance" {
     Owner       = var.tags.owner
     Created_by  = "Terraform"
   }
+
+  lifecycle {
+    ignore_changes = ["ami"]
+  }
+
 }
 
 # # # # # # # # # # # # # # Elastic IP # # # # # # # # # # # # # # #
